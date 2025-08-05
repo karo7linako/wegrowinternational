@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeGrow International</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #6c9a8b;
+      --color-secondary: #E8998D;
+      --color-accent: #EED2CC;
+      --color-bg-light: #FBF7F4;
+      --color-dark: #A1683A;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--color-bg-light);
+      color: var(--color-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: var(--color-primary);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      background: url('A_flat-design_logo_for_"WeGrow_International"_is_d.png') no-repeat center center / contain;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 80px;
+      height: 80px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.2rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin: 1rem 0;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section.alt {
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      border-radius: 16px;
+    }
+
+    .section h2 {
+      font-size: 2.4rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      background: var(--color-accent);
+      padding: 2rem;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      width: 250px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature .material-icons {
+      font-size: 48px;
+      color: var(--color-primary);
+    }
+
+    .feature h3 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: var(--color-primary);
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: var(--color-dark);
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .event {
+      background: var(--color-accent);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .event:hover {
+      transform: scale(1.03);
+    }
+
+    .event img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .event h3 {
+      margin: 1rem;
+      color: var(--color-primary);
+      font-size: 1.1rem;
+    }
+
+    .event-description {
+      display: none;
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--color-dark);
+      background: var(--color-accent);
+    }
+
+    .lang-switch {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <a href="#about" id="nav_about">O nas</a>
+      <a href="#learn" id="nav_learn">Czego uczymy?</a>
+      <a href="#events" id="nav_events">Wydarzenia</a>
+    </div>
+    <div class="lang-switch">
+      <a href="#" onclick="changeLanguage('pl')">PL</a> |
+      <a href="#" onclick="changeLanguage('en')">EN</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1 id="title">WeGrow International</h1>
+    <p id="subtitle">Rozwijamy nauczycieli, doradców i pasjonatów Biblii – globalnie, online</p>
+  </header>
+
+  <section class="section" id="learn">
+    <h2 id="learn_title">Czego uczymy?</h2>
+    <div class="features">
+      <div class="feature">
+        <span class="material-icons">laptop</span>
+        <h3 id="f1">Nauka online</h3>
+        <p id="f1d">Spotkania przez Zoom, gdziekolwiek jesteś na świecie.</p>
+      </div>
+      <div class="feature">
+        <span class="material-icons">forum</span>
+        <h3 id="f2">Webinary & Wykłady</h3>
+        <p id="f2d">Inspirujące sesje prowadzone przez doświadczonych nauczycieli.</p>
+      </div>
+      <div class="feature">
+        <span class="material-icons">public</span>
+        <h3 id="f3">Dla każdego</h3>
+        <p id="f3d">Otwarte wydarzenia bez względu na pochodzenie i wykształcenie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="events">
+    <h2 id="events_title">Kalendarz wydarzeń</h2>
+    <div class="events">
+      <div class="event" onclick="toggleDescription(this)">
+        <img src="https://source.unsplash.com/400x200/?bible,webinar" alt="Webinar">
+        <h3>12 sierpnia 2025 – Jak uczyć Biblii w XXI wieku</h3>
+        <div class="event-description">Praktyczne narzędzia i podejście do współczesnego nauczania Biblii online. Prowadzi: Anna K.</div>
+      </div>
+      <div class="event" onclick="toggleDescription(this)">
+        <img src="https://source.unsplash.com/400x200/?counseling,christian" alt="Warsztat">
+        <h3>20 sierpnia 2025 – Podstawy doradztwa chrześcijańskiego</h3>
+        <div class="event-description">Interaktywny warsztat dla osób pragnących rozwijać się jako doradcy duchowi. Prowadzi: Michał D.</div>
+      </div>
+      <div class="event" onclick="toggleDescription(this)">
+        <img src="https://source.unsplash.com/400x200/?global,community" alt="Spotkanie międzynarodowe">
+        <h3>5 września 2025 – Spotkanie międzynarodowe</h3>
+        <div class="event-description">Zoom live – wspólna modlitwa, świadectwa i dzielenie się nauką z uczestnikami z 5 kontynentów.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 id="about_title">O nas</h2>
+    <p id="about_text">WeGrow International to inicjatywa edukacyjna i duchowa, która łączy ludzi z całego świata przez nauczanie, doradztwo i inspirację biblijną. Działamy online i jesteśmy otwarci na każdego, kto pragnie się rozwijać w wierze i wiedzy.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 WeGrow International. Wszelkie prawa zastrzeżone.
+  </footer>
+
+  <script>
+    function toggleDescription(el) {
+      const desc = el.querySelector('.event-description');
+      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+    }
+
+    const translations = {
+      pl: {
+        nav_about: "O nas",
+        nav_learn: "Czego uczymy?",
+        nav_events: "Wydarzenia",
+        title: "WeGrow International",
+        subtitle: "Rozwijamy nauczycieli, doradców i pasjonatów Biblii – globalnie, online",
+        learn_title: "Czego uczymy?",
+        f1: "Nauka online",
+        f1d: "Spotkania przez Zoom, gdziekolwiek jesteś na świecie.",
+        f2: "Webinary & Wykłady",
+        f2d: "Inspirujące sesje prowadzone przez doświadczonych nauczycieli.",
+        f3: "Dla każdego",
+        f3d: "Otwarte wydarzenia bez względu na pochodzenie i wykształcenie.",
+        events_title: "Kalendarz wydarzeń",
+        about_title: "O nas",
+        about_text: "WeGrow International to inicjatywa edukacyjna i duchowa, która łączy ludzi z całego świata przez nauczanie, doradztwo i inspirację biblijną. Działamy online i jesteśmy otwarci na każdego, kto pragnie się rozwijać w wierze i wiedzy.",
+      },
+      en: {
+        nav_about: "About Us",
+        nav_learn: "What We Teach",
+        nav_events: "Events",
+        title: "WeGrow International",
+        subtitle: "Empowering teachers, counselors, and Bible lovers – globally, online",
+        learn_title: "What We Teach",
+        f1: "Online Learning",
+        f1d: "Zoom meetings wherever you are in the world.",
+        f2: "Webinars & Lectures",
+        f2d: "Inspiring sessions by experienced instructors.",
+        f3: "Open to All",
+        f3d: "Events open regardless of background or education.",
+        events_title: "Event Calendar",
+        about_title: "About Us",
+        about_text: "WeGrow International is an educational and spiritual initiative connecting people globally through teaching, counseling, and Bible-based inspiration. We operate online and welcome anyone eager to grow in faith and knowledge.",
+      }
+    };
+
+    function changeLanguage(lang) {
+      const t = translations[lang];
+      if (!t) return;
+
+      document.getElementById('nav_about').textContent = t.nav_about;
+      document.getElementById('nav_learn').textContent = t.nav_learn;
+      document.getElementById('nav_events').textContent = t.nav_events;
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('subtitle').textContent = t.subtitle;
+      document.getElementById('learn_title').textContent = t.learn_title;
+      document.getElementById('f1').textContent = t.f1;
+      document.getElementById('f1d').textContent = t.f1d;
+      document.getElementById('f2').textContent = t.f2;
+      document.getElementById('f2d').textContent = t.f2d;
+      document.getElementById('f3').textContent = t.f3;
+      document.getElementById('f3d').textContent = t.f3d;
+      document.getElementById('events_title').textContent = t.events_title;
+      document.getElementById('about_title').textContent = t.about_title;
+      document.getElementById('about_text').textContent = t.about_text;
+    }
+  </script>
+</body>
+</html>
