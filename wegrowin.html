@@ -51,6 +51,14 @@
       position: relative;
     }
 
+    header .logo {
+      display: block;     
+      margin: 0 auto 1rem; 
+      max-width: 150px;   
+      height: auto;       
+      border-radius: 12px;
+    }
+
     header::before {
       content: '';
       background: url('A_flat-design_logo_for_"WeGrow_International"_is_d.png') no-repeat center center / contain;
@@ -144,6 +152,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       cursor: pointer;
       transition: transform 0.2s;
+      max-width: 280px;
     }
 
     .event:hover {
@@ -153,7 +162,8 @@
     .event img {
       width: 100%;
       height: 180px;
-      object-fit: cover;
+      object-fit: contain; /* zamiast cover */
+      background-color: #fff; /* tło dla obrazka */
     }
 
     .event h3 {
@@ -179,6 +189,33 @@
     .lang-switch {
       font-weight: bold;
     }
+
+    .about-image {
+      width: 200px;         
+      height: 200px;        
+      border-radius: 50%;   
+      object-fit: cover;    
+      display: block;       
+      margin: 0 auto 2rem;  
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      background: none;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -196,8 +233,13 @@
   </nav>
 
   <header>
+    <img class="logo" src="images/logo.png" alt="Logo WeGrow">
     <h1 id="title">WeGrow International</h1>
     <p id="subtitle">Rozwijamy nauczycieli, doradców i pasjonatów Biblii – globalnie, online</p>
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="images/44226-438612202_small.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </header>
 
   <section class="section" id="learn">
@@ -225,24 +267,25 @@
     <h2 id="events_title">Kalendarz wydarzeń</h2>
     <div class="events">
       <div class="event" onclick="toggleDescription(this)">
-        <img src="https://source.unsplash.com/400x200/?bible,webinar" alt="Webinar">
-        <h3>12 sierpnia 2025 – Jak uczyć Biblii w XXI wieku</h3>
-        <div class="event-description">Praktyczne narzędzia i podejście do współczesnego nauczania Biblii online. Prowadzi: Anna K.</div>
+        <img src="images/prayersanswers.jpg" alt="Webinar">
+        <h3>21 czerwca 2025 15:00 – Dlaczego moje modlitwy nie są wysłuchane?</h3>
+        <div class="event-description">Twoje modlitwy są ważne, ale odpowiedzi przychodzą we właściwym czasie i na Bożych warunkach. Poznaj, jak zaufanie i cierpliwość otwierają drzwi do prawdziwego usłyszenia Boga</div>
       </div>
       <div class="event" onclick="toggleDescription(this)">
-        <img src="https://source.unsplash.com/400x200/?counseling,christian" alt="Warsztat">
-        <h3>20 sierpnia 2025 – Podstawy doradztwa chrześcijańskiego</h3>
-        <div class="event-description">Interaktywny warsztat dla osób pragnących rozwijać się jako doradcy duchowi. Prowadzi: Michał D.</div>
+        <img src="images/God'splan.jpg" alt="Warsztat">
+        <h3>24 lipiec 2025 18:30 – Jak Zrozumieć Plan Boga dla mnie?</h3>
+        <div class="event-description">Seminarium o odkrywaniu Bożego planu dla twojego życia – krok po kroku, z Bogiem jako przewodnikiem. Naucz się słuchać, rozpoznawać i iść za Jego wolą, a nie własnym pomysłem na życie</div>
       </div>
       <div class="event" onclick="toggleDescription(this)">
-        <img src="https://source.unsplash.com/400x200/?global,community" alt="Spotkanie międzynarodowe">
-        <h3>5 września 2025 – Spotkanie międzynarodowe</h3>
-        <div class="event-description">Zoom live – wspólna modlitwa, świadectwa i dzielenie się nauką z uczestnikami z 5 kontynentów.</div>
+        <img src="images/heavenlymindsetweb.jpg" alt="Spotkanie międzynarodowe">
+        <h3>31 lipca 2025 17:00 – Niebiańska Mądrość vs Światowa Mądrość</h3>
+        <div class="event-description">Prawdziwa przemiana zaczyna się od zmiany myślenia. Którą perspektywą żyjesz Ty?</div>
       </div>
     </div>
   </section>
 
   <section class="section" id="about">
+    <img class="about-image" src="images/bible-1868359_1280.jpg" alt="O nas">
     <h2 id="about_title">O nas</h2>
     <p id="about_text">WeGrow International to inicjatywa edukacyjna i duchowa, która łączy ludzi z całego świata przez nauczanie, doradztwo i inspirację biblijną. Działamy online i jesteśmy otwarci na każdego, kto pragnie się rozwijać w wierze i wiedzy.</p>
   </section>
@@ -253,8 +296,17 @@
 
   <script>
     function toggleDescription(el) {
+      const allDescriptions = document.querySelectorAll('.event-description');
       const desc = el.querySelector('.event-description');
-      desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
+      const isVisible = desc.style.display === 'block';
+
+      // Schowaj wszystkie opisy
+      allDescriptions.forEach(d => d.style.display = 'none');
+
+      // Pokaż ten, jeśli wcześniej był ukryty
+      if (!isVisible) {
+        desc.style.display = 'block';
+      }
     }
 
     const translations = {
